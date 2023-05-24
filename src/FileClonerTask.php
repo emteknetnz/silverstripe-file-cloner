@@ -8,6 +8,7 @@ use SilverStripe\Assets\File;
 use SilverStripe\Assets\Folder;
 use SilverStripe\Core\Injector\Injector;
 use SilverStripe\Assets\Storage\AssetStore;
+use SilverStripe\Core\Environment;
 
 class FileClonerTask extends BuildTask
 {
@@ -23,6 +24,9 @@ class FileClonerTask extends BuildTask
             $this->log('You must be logged in as an admin to run this task');
             return;
         }
+
+        // remove time limit
+        Environment::increaseTimeLimitTo(null);
 
         $folderID = $request->getVar('folderID');
         $fileID = $request->getVar('fileID');
@@ -57,7 +61,6 @@ class FileClonerTask extends BuildTask
 
         $fileID = $file->ID;
         $t = time();
-
         $store = Injector::inst()->get(AssetStore::class);
         $filesystem = $store->getPublicFilesystem();
         $stream = $filesystem->readStream($file->Filename);
@@ -72,7 +75,7 @@ class FileClonerTask extends BuildTask
             // a mix of files they're not in different hash directories
             $newFile->publishRecursive();
         }
-        $this->log("Create $num files in $folder->Name");
+        $this->log("Success! Created $num files in the folder $folder->Name");
     }
 
     private function log($s)
