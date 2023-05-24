@@ -13,6 +13,8 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4 || ^5"
+        "silverstripe/framework": "^4 || ^5",
+        "silverstripe/assets": "^1 || ^2",
+        "silverstripe/versioned": "^1 || ^2"
     }
 }
