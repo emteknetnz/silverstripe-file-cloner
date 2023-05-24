@@ -16,7 +16,7 @@ Only use this for testing!
 2. Ensure there are 2x folders:
 - First folder contain one or more source files that will be cloned - recommend you use PDFs and not images
 - Second folder is where you will clone the files to
-3. Ensure the files in the first folder have been published via the CMS
+3. Ensure the file(s) in the first folder have been published via the CMS
 4. Run the build task `https://mysite.test/dev/tasks/FileClonerTask?fileID=123&folderID=456&num=1000`
 
 ### Querystring parameters
