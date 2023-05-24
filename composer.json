@@ -1,5 +1,6 @@
 {
     "name": "emteknetnz/silverstripe-file-cloner",
+    "type": "silverstripe-vendormodule",
     "autoload": {
         "psr-4": {
             "emteknetnz\\SilverstripeFileCloner\\": "src/"
@@ -12,12 +13,6 @@
         }
     ],
     "require": {
-        "silverstripe/framework": "^4|^5"
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/installers": true,
-            "silverstripe/vendor-plugin": true
-        }
+        "silverstripe/framework": "^4 || ^5"
     }
 }

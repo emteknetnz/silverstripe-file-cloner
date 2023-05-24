@@ -1,5 +1,7 @@
 <?php
 
+namespace emteknetnz\SilverstripeFileCloner;
+
 use SilverStripe\Dev\BuildTask;
 use SilverStripe\Security\Permission;
 use SilverStripe\Assets\File;
@@ -9,6 +11,7 @@ class FileClonerTask extends BuildTask
 {
     protected $title = 'File Cloner Task';
     protected $description = 'Clones an existing file into an existing folder a large number of times';
+    private static $segment = 'CleanupTestDatabasesTask';
 
     public function run($request)
     {
