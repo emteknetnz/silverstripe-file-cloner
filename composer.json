@@ -1,0 +1,23 @@
+{
+    "name": "emteknetnz/silverstripe-file-cloner",
+    "autoload": {
+        "psr-4": {
+            "emteknetnz\\SilverstripeFileCloner\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Steve Boyd",
+            "email": "emteknetnz@gmail.com"
+        }
+    ],
+    "require": {
+        "silverstripe/framework": "^4|^5"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/vendor-plugin": true
+        }
+    }
+}
